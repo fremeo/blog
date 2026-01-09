@@ -7,12 +7,12 @@ if(($D['ACTION']??null) == 'save') {
 		foreach((array)$PAG['LANGUAGE']['D'] AS $kLAN => $LAN) {
 
 			$D['LINK']['D'][ $LAN['LINK'] ]['Active'] = -2; #Alte URL löschen
-			if($LAN['Active'] != -2 && $PAG != -2) {
+			if(($LAN['Active']??null) != -2 && $PAG != -2) {
 				$hURL = hash("crc32b", $LAN['FromURL']);
 				$D['LINK']['D'][$hURL] = [
 					'Active'	=> 1,
 					'FromURL'	=> $LAN['FromURL'],
-					'ToURL'		=> "D[_PAGE]=blog&D[_ID]={$kPAG}&D[_LANGUAGE]={$kLAN}",
+					'ToURL'		=> "D[_PAGE]=frontend__blog&R[ModuleId]=papp/blog&D[_ID]={$kPAG}&D[_LANGUAGE]={$kLAN}",
 				];
 				$D['BLOG']['D'][$kPAG]['LANGUAGE']['D'][$kLAN]['LINK'] = $hURL;
 				$D['BLOG']['D'][$kPAG]['LANGUAGE']['D'][$kLAN]['Text'] = str_replace('-textarea>','textarea>',$D['BLOG']['D'][$kPAG]['LANGUAGE']['D'][$kLAN]['Text']);
@@ -30,7 +30,7 @@ if(($D['ACTION']??null) == 'save') {
 
 	$CData->set_object($D); 
 }
-if($D['_ID']) {
+if(($D['_ID']??null)) {
 	$F['BLOG']['W'][0]['ID'] = [$D['_ID']];
 	$F['BLOG']['LANGUAGE'] = [];
 
