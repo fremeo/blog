@@ -7,7 +7,8 @@
 	$F['BLOG']['LANGUAGE']['W'][0]['ID'] = 'DE'; #Todo: Sprache Übergabe
 	$F['BLOG']['O'][0]['DateTime'] = 'DESC';
 	
-	#$CData->get_object($D,$F);
+	$C['CData']->get_object($D,$F);
+	
 	if($D['BLOG']['D']??null) {
 		foreach($D['BLOG']['D'] AS $kB => $B) {
 			foreach($B['LANGUAGE']['D'] AS $kBL => $BL) {
