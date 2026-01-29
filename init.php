@@ -11,16 +11,17 @@ $D['LINK']['D'][ hash("crc32b", 'admin/link.list.html') ] = [
 */
 #DB-----------------
 
+$Pattern = [];
 
-
-$D['PATTERN']['BLOG'] = [
+$Pattern['BLOG'] = [
 	'Active'	=> ['Type' => 'checkbox'],
 	'DateTime'	=> ['Type' => 'text'],
 ];
-$D['PATTERN']['BLOG']['D']['LANGUAGE'] = [
+$Pattern['BLOG']['D']['LANGUAGE'] = [
 	'Title'		=> ['Type' => 'text'],
 	'Text'		=> ['Type' => 'text'],
 	'ShortText'	=> ['Type' => 'text'],
 	'LINK'		=> ['Type' => 'id'], #ID für LINK je Sprache
 ];
 
+$C['CData']->registerPattern($Pattern);

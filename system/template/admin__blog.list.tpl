@@ -18,12 +18,12 @@
 				<td scope="row">{input p=['name'=>"D[BLOG][D][{$kPAG}][Active]", 'value'=>$PAG.Active, 'type' => 'checkbox']}</td>
 				<td scope="row">{input p=['type' => 'datetime', 'name'=>"D[BLOG][D][{$kPAG}][DateTime]", 'value'=>$PAG.DateTime]}</td>
 				<td>{$PAG.LANGUAGE.D['DE'].Title}</td>
-				<td><button type="button" onclick="window.open('?D[_PAGE]=admin__blog.edit&R[ModuleId]=papp/blog&D[_ID]={$kPAG}','_self');" class="btn btn-primary btn-sm">Edit</button></td>
+				<td><button type="button" onclick="window.open('?R[Page]=admin__blog.edit&R[ModuleId]=papp/blog&D[_ID]={$kPAG}','_self');" class="btn btn-primary btn-sm">Edit</button></td>
 			</tr>
 		{/foreach}
 		</tbody>
 	</table>
 	<button type="submit" class="btn btn-primary btn-sm">Save</button>
 	</form>
-	<button type="button" onclick="window.open('?D[_PAGE]=admin__blog.edit&R[ModuleId]=papp/blog&D[BLOG][D][{hash("crc32b", time())}][Active]=1','_self');" class="btn btn-primary btn-sm">Neu</button>
+	<button type="button" onclick="window.open('?R[Page]=admin__blog.edit&R[ModuleId]=papp/blog&D[BLOG][D][{hash("crc32b", time())}][Active]=1','_self');" class="btn btn-primary btn-sm">Neu</button>
 {/block}

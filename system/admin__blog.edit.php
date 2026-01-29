@@ -28,13 +28,13 @@ if(($D['ACTION']??null) == 'save') {
 		}
 	}
 
-	$CData->set_object($D); 
+	$C['CData']->set_object($D); 
 }
 if(($D['_ID']??null)) {
 	$F['BLOG']['W'][0]['ID'] = [$D['_ID']];
 	$F['BLOG']['LANGUAGE'] = [];
 
-	$CData->get_object($D,$F); 
+	$C['CData']->get_object($D,$F); 
 	unset($F['BLOG']);
 
 	foreach((array)$D['BLOG']['D'][ $D['_ID'] ]['LANGUAGE']['D'] AS $kLAN => $LAN) {
