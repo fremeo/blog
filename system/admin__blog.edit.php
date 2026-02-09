@@ -5,16 +5,25 @@ if(($D['ACTION']??null) == 'save') {
 	#erstelle neues SEO Link weiterleitung und lösche alte und weise die Link-ID der Seite neu zu.
 	foreach((array)$D['BLOG']['D'] AS $kPAG => $PAG) {
 		foreach((array)$PAG['LANGUAGE']['D'] AS $kLAN => $LAN) {
+$_delLink[] = $LAN['LINK'];
+			#$D['LINK']['D'][ $LAN['LINK'] ]['Active'] = -2; #Alte URL löschen
 
-			$D['LINK']['D'][ $LAN['LINK'] ]['Active'] = -2; #Alte URL löschen
 			if(($LAN['Active']??null) != -2 && $PAG != -2) {
-				$hURL = hash("crc32b", $LAN['FromURL']);
+/*				$hURL = hash("crc32b", $LAN['FromURL']);
 				$D['LINK']['D'][$hURL] = [
 					'Active'	=> 1,
 					'FromURL'	=> $LAN['FromURL'],
 					'ToURL'		=> "D[_PAGE]=frontend__blog&R[ModuleId]=papp/blog&D[_ID]={$kPAG}&D[_LANGUAGE]={$kLAN}",
 				];
-				$D['BLOG']['D'][$kPAG]['LANGUAGE']['D'][$kLAN]['LINK'] = $hURL;
+*/
+$_newLink["{$kPAG}-{$kLAN}"] = [
+					'Page' => 'frontend__blog',
+					'ModuleId' => 'papp/blog',
+					'Param' => "R[Id]={$kPAG}&R[LanguageId]={$kLAN}",
+					'SeoURL' => $LAN['FromURL'],
+				];
+
+				#$D['BLOG']['D'][$kPAG]['LANGUAGE']['D'][$kLAN]['LINK'] = $hURL;
 				$D['BLOG']['D'][$kPAG]['LANGUAGE']['D'][$kLAN]['Text'] = str_replace('-textarea>','textarea>',$D['BLOG']['D'][$kPAG]['LANGUAGE']['D'][$kLAN]['Text']);
 				
 			}
@@ -27,6 +36,25 @@ if(($D['ACTION']??null) == 'save') {
 			}
 		}
 	}
+
+
+	if($_delLink) {
+		$C['papp_phpapp']['Link']->deleteById($_delLink);
+
+		if($_newLink) {
+				$ret = $C['papp_phpapp']['Link']->create($_newLink);
+
+
+				foreach((array)$D['BLOG']['D'] AS $kPAG => $PAG) {
+					foreach((array)$PAG['LANGUAGE']['D'] AS $kLAN => $LAN) {
+						if(isset($ret["{$kPAG}-{$kLAN}"])) {
+							$D['BLOG']['D'][$kPAG]['LANGUAGE']['D'][$kLAN]['LINK'] = $ret["{$kPAG}-{$kLAN}"]['LinkId'];
+						}
+					}
+				}
+		}
+	}
+
 
 	$C['CData']->set_object($D); 
 }
