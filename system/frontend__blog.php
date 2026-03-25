@@ -8,8 +8,10 @@
 	$F['BLOG']['LANGUAGE']['W'][0]['ID'] = 'DE'; #Todo: Sprache Übergabe
 
 	#$C['CData']->get_object($D,$F);
-
+	$C['papp~blog']['CData']->get_object($D,$F);
+	unset($F['BLOG']);
 
 	$D['_meta']['robots'] = 'index, follow';
 	$D['_meta']['title'] = $D['BLOG']['D'][$R['Id']]['LANGUAGE']['D']['DE']['Title']??'';
 	$D['_meta']['description'] = $D['BLOG']['D'][$R['Id']]['LANGUAGE']['D']['DE']['Text']??'';
+	

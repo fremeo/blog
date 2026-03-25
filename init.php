@@ -24,4 +24,13 @@ $Pattern['BLOG']['D']['LANGUAGE'] = [
 	'LINK'		=> ['Type' => 'id'], #ID für LINK je Sprache
 ];
 
-$C['CData']->registerPattern($Pattern);
+#$C['CData']->registerPattern($Pattern);
+
+$C['papp~blog']['CData'] = new \papp\CData( [ 'DB' => ['FILENAME' => PROJECT_ROOT.'data/papp~blog/data.db', 'FILENAME_C' => PROJECT_ROOT.'data_c/papp~blog/data.db' ] ] );
+$C['papp~blog']['CData']->registerPattern($Pattern);
+
+/*
+$F['BLOG']['LANGUAGE'] = [];
+$C['CData']->get_object($D1,$F);
+$C['papp~blog']['CData']->set_object($D1);
+*/

@@ -1,7 +1,7 @@
 <?php
 
 if(($D['ACTION']??null) == 'save') {
-	$C['CData']->set_object($D); 
+	$C['papp~blog']['CData']->set_object($D); 
 }
 
 #$F['PAGE']['W'][0]['ID'] = [$D['_ID']];
