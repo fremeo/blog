@@ -39,10 +39,10 @@ $_newLink["{$kPAG}-{$kLAN}"] = [
 
 
 	if($_delLink) {
-		$C['papp_phpapp']['Link']->deleteById($_delLink);
+		$C['papp~phpapp']['Link']->deleteById($_delLink);
 
 		if($_newLink) {
-				$ret = $C['papp_phpapp']['Link']->create($_newLink);
+				$ret = $C['papp~phpapp']['Link']->create($_newLink);
 
 
 				foreach((array)$D['BLOG']['D'] AS $kPAG => $PAG) {
