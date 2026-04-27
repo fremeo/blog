@@ -21,7 +21,7 @@ $Pattern['BLOG']['D']['LANGUAGE'] = [
 	'Title'		=> ['Type' => 'text'],
 	'Text'		=> ['Type' => 'text'],
 	'ShortText'	=> ['Type' => 'text'],
-	'LINK'		=> ['Type' => 'id'], #ID für LINK je Sprache
+	'LinkId'	=> ['Type' => 'id'], #ID für LINK je Sprache
 ];
 
 #$C['CData']->registerPattern($Pattern);

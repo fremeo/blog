@@ -13,8 +13,8 @@
 				<table class="table">
 					<tr>
 						<td>SEO-URL:</td>
-						<td>{input p=['name'=>"D[BLOG][D][{$kPAG}][LANGUAGE][D][DE][FromURL]", 'value'=>$D.LINK.D[ $PAG.LANGUAGE.D['DE'].LINK ].FromURL ]}
-							{input p=['name'=>"D[BLOG][D][{$kPAG}][LANGUAGE][D][DE][LINK]", 'value'=>$PAG.LANGUAGE.D['DE'].LINK, 'type' => 'hidden' ]}
+						<td>{input p=['name'=>"D[BLOG][D][{$kPAG}][LANGUAGE][D][DE][FromURL]", 'value'=>$D.LINK.D[ $PAG.LANGUAGE.D['DE'].LinkId ].FromURL ]}
+							{input p=['name'=>"D[BLOG][D][{$kPAG}][LANGUAGE][D][DE][LinkId]", 'value'=>$PAG.LANGUAGE.D['DE'].LinkId, 'type' => 'hidden' ]}
 						</td>
 					</tr>
 					<tr>
