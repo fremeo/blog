@@ -31,6 +31,6 @@ $C['papp~blog']['CData']->registerPattern($Pattern);
 
 /*
 $F['BLOG']['LANGUAGE'] = [];
-$C['CData']->get_object($D1,$F);
+$C['papp~phpapp']['CData']->get_object($D1,$F);
 $C['papp~blog']['CData']->set_object($D1);
 */
