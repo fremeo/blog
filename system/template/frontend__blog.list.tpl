@@ -5,7 +5,7 @@
 			<div class="row gy-5">
 			{foreach from=$D.BLOG.D key="kPAG" item="PAG"}
 				
-				<div class="col-6">
+				<div class="col-12 col-sm-6">
 					<article itemprop="blogPost" itemscope="" style="display: inline-grid; height:100%;" itemtype="http://schema.org/BlogPosting">
 					
 					
