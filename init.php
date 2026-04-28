@@ -16,6 +16,7 @@ $Pattern = [];
 $Pattern['BLOG'] = [
 	'Active'	=> ['Type' => 'checkbox'],
 	'DateTime'	=> ['Type' => 'text'],
+	'MainImg'	=> ['Type' => 'id'], #FileId
 ];
 $Pattern['BLOG']['D']['LANGUAGE'] = [
 	'Title'		=> ['Type' => 'text'],
@@ -23,7 +24,11 @@ $Pattern['BLOG']['D']['LANGUAGE'] = [
 	'ShortText'	=> ['Type' => 'text'],
 	'LinkId'	=> ['Type' => 'id'], #ID für LINK je Sprache
 ];
-
+/*
+$Pattern['BLOG']['D']['FILE'] = [
+	'Active'	=> ['Type' => 'checkbox'],
+	''
+];*/
 #$C['CData']->registerPattern($Pattern);
 
 $C['papp~blog']['CData'] = new \papp\CData( [ 'DB' => ['FILENAME' => PROJECT_ROOT.'data/papp~blog/data.db', 'FILENAME_C' => PROJECT_ROOT.'data_c/papp~blog/data.db' ] ] );

@@ -26,6 +26,10 @@
 						<td>{input p=['name'=>"D[BLOG][D][{$kPAG}][LANGUAGE][D][DE][Title]", 'value'=>$PAG.LANGUAGE.D['DE'].Title]}</td>
 					</tr>
 					<tr>
+						<td>Title Bild (FileId): {if $PAG.MainImg}<img decoding="async" src="./file/{$PAG.MainImg}_50x50.png">{/if}</td>
+						<td>{input p=['name'=>"D[BLOG][D][{$kPAG}][MainImg]", 'value'=>$PAG.MainImg]}</td>
+					</tr>
+					<tr>
 						<td>Kurzbeschreibung:</td>
 						<td>{input p=['name'=>"D[BLOG][D][{$kPAG}][LANGUAGE][D][DE][ShortText]", 'type'=> 'wysiwyg', 'style'=>'height:150px', 'value'=>str_replace('textarea>','-textarea>',$PAG.LANGUAGE.D['DE'].ShortText)]}</td>
 					</tr>
