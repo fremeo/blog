@@ -12,7 +12,11 @@
 					<div class="card">
 					{if $PAG.MainImg}
 					<a href="{$D.BasePath}{$D.LINK.D[ $PAG.LANGUAGE.D['DE'].LinkId ].FromURL}">
-						<img decoding="async" itemprop="image" src="./file/{$PAG.MainImg}_1200x640.png" class="card-img-top" alt="{$PAG.LANGUAGE.D['DE'].Title}">
+						<picture> 
+							<source srcset="./file/{$PAG.MainImg}_1200x640.avif" type="image/avif">
+							<source srcset="./file/{$PAG.MainImg}_1200x640.webp" type="image/webp">
+							<img itemprop="image" src="./file/{$PAG.MainImg}_1200x640.jpg" decoding="async" loading="lazy" class="d-block w-100" alt="{$PAG.LANGUAGE.D['DE'].Title}">
+						</picture>
 					</a>
 					{/if}
 						<div class="card-body">
