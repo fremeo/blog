@@ -31,11 +31,11 @@ $Pattern['BLOG']['D']['FILE'] = [
 ];*/
 #$C['CData']->registerPattern($Pattern);
 
-$C['papp~blog']['CData'] = new \papp\CData( [ 'DB' => ['FILENAME' => PROJECT_ROOT.'data/papp~blog/data.db', 'FILENAME_C' => PROJECT_ROOT.'data_c/papp~blog/data.db' ] ] );
-$C['papp~blog']['CData']->registerPattern($Pattern);
+$C['fremeo~blog']['CData'] = new \papp\CData( [ 'DB' => ['FILENAME' => PROJECT_ROOT.'data/fremeo~blog/data.db', 'FILENAME_C' => PROJECT_ROOT.'data_c/fremeo~blog/data.db' ] ] );
+$C['fremeo~blog']['CData']->registerPattern($Pattern);
 
 /*
 $F['BLOG']['LANGUAGE'] = [];
 $C['papp~phpapp']['CData']->get_object($D1,$F);
-$C['papp~blog']['CData']->set_object($D1);
+$C['fremeo~blog']['CData']->set_object($D1);
 */
