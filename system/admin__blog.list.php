@@ -1,7 +1,7 @@
 <?php
 
 if(($D['ACTION']??null) == 'save') {
-	$C['papp~blog']['CData']->set_object($D); 
+	$C['fremeo/blog']['CData']->set_object($D); 
 }
 
 #$F['PAGE']['W'][0]['ID'] = [$D['_ID']];
@@ -10,7 +10,7 @@ $F['BLOG']['LANGUAGE'] = [];
 $F['BLOG']['L'] = $R['F']['BLOG']['L']??null;
 
 
-$C['papp~blog']['CData']->get_object($D,$F);
+$C['fremeo/blog']['CData']->get_object($D,$F);
 unset($F);
 
 # lesen der Links für die Vorschau

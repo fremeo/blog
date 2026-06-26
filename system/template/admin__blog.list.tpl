@@ -148,7 +148,7 @@ window.paging = function(paramString) {
 							{/if}
 							{$PAG.LANGUAGE.D['DE'].Title}</td>
 							<td scope="row">{input p=['type' => 'datetime', 'name'=>"D[BLOG][D][{$kPAG}][DateTime]", 'value'=>$PAG.DateTime]}</td>
-							<td><button type="button" onclick="window.open('?R[Page]=admin__blog.edit&R[ModuleId]=papp/blog&D[_ID]={$kPAG}','_self');" class="btn btn-primary btn-sm"><i class="fa-regular fa-pen-to-square"></i></button></td>
+							<td><button type="button" onclick="window.open('?R[Page]=admin__blog.edit&R[ModuleId]=fremeo/blog&D[_ID]={$kPAG}','_self');" class="btn btn-primary btn-sm"><i class="fa-regular fa-pen-to-square"></i></button></td>
 						</tr>
 					{/foreach}
 					</tbody>
@@ -159,7 +159,7 @@ window.paging = function(paramString) {
 					<!-- Linke Seite: Buttons -->
 					<div class="footer-left d-flex gap-2">
 						<button type="submit" class="btn btn-primary btn-sm"><i class="fa-regular fa-floppy-disk"></i> Save</button>
-						<button type="button" onclick="window.open('?R[Page]=admin__blog.edit&R[ModuleId]=papp/blog&D[BLOG][D][{hash("crc32b", time())}][Active]=1','_self');" class="btn btn-primary btn-sm"><i class="fa-solid fa-circle-plus"></i> Neu</button>
+						<button type="button" onclick="window.open('?R[Page]=admin__blog.edit&R[ModuleId]=fremeo/blog&D[BLOG][D][{hash("crc32b", time())}][Active]=1','_self');" class="btn btn-primary btn-sm"><i class="fa-solid fa-circle-plus"></i> Neu</button>
 					</div>
 					
 					{$step = $D.R.F.BLOG.L.STEP|default:10}

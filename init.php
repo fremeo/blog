@@ -5,7 +5,7 @@
 /*
 $D['LINK']['D'][ hash("crc32b", 'admin/link.list.html') ] = [
 	'FromURL' => "admin/link.list.html",
-	'ToURL' => "D[_PAGE]=admin__link.list&R[ModulId]=papp/framework",
+	'ToURL' => "D[_PAGE]=admin__link.list&R[ModulId]=fremeo/framework",
 	'Active' => 1,
 ];
 */
@@ -31,11 +31,11 @@ $Pattern['BLOG']['D']['FILE'] = [
 ];*/
 #$C['CData']->registerPattern($Pattern);
 
-$C['fremeo~blog']['CData'] = new \papp\CData( [ 'DB' => ['FILENAME' => PROJECT_ROOT.'data/fremeo~blog/data.db', 'FILENAME_C' => PROJECT_ROOT.'data_c/fremeo~blog/data.db' ] ] );
+$C['fremeo~blog']['CData'] = new \phploader\CData( [ 'DB' => ['FILENAME' => PROJECT_ROOT.'data/fremeo~blog/data.db', 'FILENAME_C' => PROJECT_ROOT.'data_c/fremeo~blog/data.db' ] ] );
 $C['fremeo~blog']['CData']->registerPattern($Pattern);
 
 /*
 $F['BLOG']['LANGUAGE'] = [];
-$C['papp~phpapp']['CData']->get_object($D1,$F);
+$C['fremeo~core']['CData']->get_object($D1,$F);
 $C['fremeo~blog']['CData']->set_object($D1);
 */

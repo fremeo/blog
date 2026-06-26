@@ -6,7 +6,7 @@ if(($D['ACTION']??null) == 'save') {
 	#Benötigt, um die vorige LinkId heraus zu lesen falls Links geändert werden
 	$f['BLOG']['W'][0]['ID'] = [$D['_ID']];
 	$f['BLOG']['LANGUAGE'] = [];
-	$C['papp~blog']['CData']->get_object($alt_d,$f); #gib die alte LinkId fals bereits verwendet
+	$C['fremeo/blog']['CData']->get_object($alt_d,$f); #gib die alte LinkId fals bereits verwendet
 
 	#erstelle neues SEO Link weiterleitung und lösche alte und weise die Link-ID der Seite neu zu.
 	foreach((array)$D['BLOG']['D'] AS $kPAG => $PAG) {
@@ -19,7 +19,7 @@ if(($D['ACTION']??null) == 'save') {
 				$D['LINK']['D'][$hURL] = [
 					'Active'	=> 1,
 					'FromURL'	=> $LAN['FromURL'],
-					'ToURL'		=> "D[_PAGE]=frontend__blog&R[ModuleId]=papp/blog&D[_ID]={$kPAG}&D[_LANGUAGE]={$kLAN}",
+					'ToURL'		=> "D[_PAGE]=frontend__blog&R[ModuleId]=fremeo/blog&D[_ID]={$kPAG}&D[_LANGUAGE]={$kLAN}",
 				];
 */
 if($LAN['FromURL']??false) {
@@ -30,7 +30,7 @@ if($LAN['FromURL']??false) {
 	
 	$_newLink["{$kPAG}-{$kLAN}"] = [
 						'Page' => 'frontend__blog',
-						'ModuleId' => 'papp/blog',
+						'ModuleId' => 'fremeo/blog',
 						'Param' => "R[Id]={$kPAG}&R[LanguageId]={$kLAN}",
 						'SeoURL' => $LAN['FromURL'],
 					];
@@ -50,10 +50,10 @@ if($LAN['FromURL']??false) {
 	}
 
 	if($_delLink??false) {
-		$C['papp~phpapp']['Link']->deleteById($_delLink);
+		$C['fremeo~core']['Link']->deleteById($_delLink);
 	}
 	if($_newLink??false) {
-			$ret = $C['papp~phpapp']['Link']->create($_newLink);
+			$ret = $C['fremeo~core']['Link']->create($_newLink);
 
 
 			foreach((array)$D['BLOG']['D'] AS $kPAG => $PAG) {
@@ -67,13 +67,13 @@ if($LAN['FromURL']??false) {
 
 
 
-	$C['papp~blog']['CData']->set_object($D); 
+	$C['fremeo/blog']['CData']->set_object($D); 
 }
 if(($D['_ID']??null)) {
 	$F['BLOG']['W'][0]['ID'] = [$D['_ID']];
 	$F['BLOG']['LANGUAGE'] = [];
 
-	$C['papp~blog']['CData']->get_object($D,$F); 
+	$C['fremeo/blog']['CData']->get_object($D,$F); 
 	unset($F['BLOG']);
 
 	foreach((array)$D['BLOG']['D'][ $D['_ID'] ]['LANGUAGE']['D'] AS $kLAN => $LAN) {

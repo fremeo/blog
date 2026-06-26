@@ -7,7 +7,7 @@
 	$F['BLOG']['LANGUAGE']['W'][0]['ID'] = 'DE'; #Todo: Sprache Übergabe
 	$F['BLOG']['O'][0]['DateTime'] = 'DESC';
 	
-	$C['papp~blog']['CData']->get_object($D,$F);
+	$C['fremeo/blog']['CData']->get_object($D,$F);
 	
 	if($D['BLOG']['D']??null) {
 		foreach($D['BLOG']['D'] AS $kB => $B) {
@@ -19,5 +19,5 @@
 	}
 	$D['_meta']['robots'] = 'index, follow';
 	
-$C['papp~blog']['CData']->get_object($D,$F);
+$C['fremeo/blog']['CData']->get_object($D,$F);
 	unset($F['BLOG']);

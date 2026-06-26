@@ -8,7 +8,7 @@
 	$F['BLOG']['LANGUAGE']['W'][0]['ID'] = 'DE'; #Todo: Sprache Übergabe
 
 	#$C['CData']->get_object($D,$F);
-	$C['papp~blog']['CData']->get_object($D,$F);
+	$C['fremeo/blog']['CData']->get_object($D,$F);
 	unset($F['BLOG']);
 
 	$D['_meta']['robots'] = 'index, follow';
