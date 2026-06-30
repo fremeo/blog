@@ -50,10 +50,10 @@ if($LAN['FromURL']??false) {
 	}
 
 	if($_delLink??false) {
-		$C['fremeo~core']['Link']->deleteById($_delLink);
+		$C['Link']->deleteById($_delLink);
 	}
 	if($_newLink??false) {
-			$ret = $C['fremeo~core']['Link']->create($_newLink);
+			$ret = $C['Link']->create($_newLink);
 
 
 			foreach((array)$D['BLOG']['D'] AS $kPAG => $PAG) {
@@ -81,3 +81,4 @@ if(($D['_ID']??null)) {
 	}
 }
 #$F['LINK'] = [];
+$C['fremeo/blog']['CData']->get_object($D,$F); #Link holen
